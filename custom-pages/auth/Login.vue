@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Login</h2>
+    <h2>Log in</h2>
     <form @submit.prevent="handleLogin">
       <input v-model="name" placeholder="name" required />
       <input v-model="email" type="email" placeholder="Email" required />

@@ -4,6 +4,7 @@ export const routes = [
         path: '/product',
         file: '~/pages/components/Products.vue'
     },
+   
     {
         name: 'Header_Index',
         path: '/header',
@@ -16,7 +17,7 @@ export const routes = [
         file: '~/custom-pages/auth/Login.vue'
     },
 
-  
+
     {
         name: 'Auth__Signup',
         path: '/signup',
@@ -27,11 +28,16 @@ export const routes = [
         path: '/cart',
         file: '~/pages/components/CartPage.vue'
     },
-    
+
     {
-        path: '/products/:categoryId?', 
+        path: '/products/:categoryId?',
         name: 'Products',
-        component: '~/pages/components/Products.vue',  
-      },
-    
+        component: '~/pages/components/Products.vue',
+    },
+    {
+        name: 'Orders',
+        path: '/orders',
+        file: '~/pages/orders.vue'
+    },
+
 ];

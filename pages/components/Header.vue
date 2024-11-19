@@ -130,12 +130,8 @@ export default {
     cart: Array,
   },
   methods: {
-    toggleUserMenu() {
-      // Toggle user menu logic
-    },
-    goToCart() {
-      // Logic to navigate to the cart
-    },
+    toggleUserMenu() {},
+    goToCart() {},
   },
 };
 </script>
@@ -163,7 +159,6 @@ export default {
   gap: 1rem;
 }
 
-/* Categories button */
 .categories-btn {
   display: flex;
   align-items: center;
@@ -188,7 +183,6 @@ export default {
   background-color: #222;
 }
 
-/* Search bar */
 .search-container {
   flex: 1;
   max-width: 500px;

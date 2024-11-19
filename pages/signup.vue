@@ -1,20 +1,22 @@
 <template>
-  <div>
-    <h2>Register</h2>
-    <form @submit.prevent="handleRegister">
-      <input v-model="name" placeholder="name" required />
-      <input v-model="email" type="email" placeholder="Email" required />
-      <input
-        v-model="password"
-        type="password"
-        placeholder="Password"
-        required
-      />
-      <button type="submit">Register</button>
-    </form>
-    <p v-if="message">{{ message }}</p>
-    <div class="login-link">
-      <p>Đã có tài khoản? <router-link to="/login">Đăng nhập</router-link></p>
+  <div class="register-container">
+    <div class="register-form">
+      <h2>Signup</h2>
+      <form @submit.prevent="handleRegister">
+        <input v-model="name" placeholder="name" required />
+        <input v-model="email" type="email" placeholder="Email" required />
+        <input
+          v-model="password"
+          type="password"
+          placeholder="Password"
+          required
+        />
+        <button type="submit">Signup</button>
+      </form>
+      <p v-if="message" class="message">{{ message }}</p>
+      <div class="register-link">
+        <p>Đã có tài khoản? <router-link to="/login">Đăng nhập</router-link></p>
+      </div>
     </div>
   </div>
 </template>
@@ -63,62 +65,94 @@ const handleRegister = async () => {
 };
 </script>
 <style scoped>
-.signup {
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.register-form {
+  width: 100%;
   max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
+  padding: 2.5rem;
+  background-color: #ffffff;
   color: #333;
-  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-form div {
-  margin-bottom: 20px;
+.register-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
-form label {
-  display: block;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #555;
+.register-form h2 {
+  text-align: center;
+  color: #333;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
 }
 
 form input {
-  width: 100%;
-  padding: 12px;
-  font-size: 14px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  outline: none;
-  box-sizing: border-box;
+  padding: 0.9rem;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  transition: border 0.3s ease;
 }
 
 form input:focus {
-  border-color: #007bff;
+  border-color: #f53d2d;
+  outline: none;
 }
 
 form button {
-  width: 100%;
-  padding: 12px;
-  background-color: #007bff;
-  color: white;
+  padding: 0.9rem;
+  font-size: 1rem;
+  background-color: #f53d2d;
+  color: #fff;
   border: none;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: 5px;
   cursor: pointer;
+  margin-top: 1rem;
   transition: background-color 0.3s ease;
 }
 
 form button:hover {
-  background-color: #0056b3;
+  background-color: #e13320;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.register-link a {
+  color: #f53d2d;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.register-link a:hover {
+  color: #e13320;
+}
+
+.message {
+  text-align: center;
+  margin-top: 1.2rem;
+  color: #f53d2d;
+  font-size: 0.95rem;
+  font-weight: bold;
 }
 </style>

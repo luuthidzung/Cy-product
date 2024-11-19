@@ -15,7 +15,9 @@
     "jwt-decode": "^4.0.0",
     "nuxt": "^3.14.159",
     "nuxt-app": "file:",
-    "vue": "latest",
+    "pinia": "^2.2.6",
+    "vite": "^4.5.5",
+    "vue": "^3.4.0",
     "vue-router": "latest"
   }
 }
